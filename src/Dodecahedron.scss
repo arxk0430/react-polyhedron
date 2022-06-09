@@ -1,0 +1,192 @@
+:root {
+    --boxColor: #0ff7;
+}
+
+.dodecahedron-container {
+    height: 400px;
+    width: 400px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    perspective-origin: 50% calc(50% - 2em);
+}
+
+.dodecahedron {
+    // property of polygon https://en.wikipedia.org/wiki/Pentagon
+    $width: 100px;
+    $height: 95.1174289246px;
+    $side-length: 61.804697157px;
+    $centerY: 52.5772558715px;
+    // property of dodecahedron
+    $inradius: 68.821px;
+    $dihedral-angle: 116.56505deg;
+
+    $border-width: 6px;
+    width: $width;
+    height: $height;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: happy-rotate 25s linear infinite forwards;
+
+    .bottom, .b1, .b2, .b3, .b4, .b5, .top, .b6, .b7, .b8, .b9, .b10 {
+        position: absolute;
+        background: var(--boxColor);
+        opacity: 0.9;
+        height: $height;
+        width: $width;
+        z-index: 1;
+        clip-path: polygon( 50% 0, 100% 38.196601125%, 80.901699438% 100%, 19.098300562% 100%, 0 38.196601125%); //https://mathworld.wolfram.com/RegularPentagon.html
+
+        .bottom-border {
+            position: absolute;
+            width: $width;
+            height: calc( $height - $border-width );
+            border-bottom: $border-width solid white;
+        }
+
+        .left-top-border {
+            position: absolute;
+            width: $width;
+            height: calc( $height - $border-width );
+            border-bottom: $border-width solid white;
+            transform-origin: 50% $centerY; 
+            transform: rotateZ(144deg);
+        }
+
+        .right-top-border {
+            position: absolute;
+            width: $width;
+            height: calc( $height - $border-width );
+            border-bottom: $border-width solid white;
+            transform-origin: 50% $centerY;
+            transform: rotateZ(-144deg);
+        }
+
+        .left-bottom-border {
+            position: absolute;
+            width: $width;
+            height: calc( $height - $border-width );
+            border-bottom: $border-width solid white;
+            transform-origin: 50% $centerY;
+            transform: rotateZ(72deg);
+        }
+
+        .right-bottom-border {
+            position: absolute;
+            width: $width;
+            height: calc( $height - $border-width );
+            border-bottom: $border-width solid white;
+            transform-origin: 50% $centerY;
+            transform: rotateZ(-72deg);
+        }
+    }
+
+    .bottom {
+        transform: translateZ(-50px);
+    }
+
+    .b1 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(-50px)
+            translateX(25%)
+            translateY(-80.901699438%)
+            rotate(-144deg)
+            rotatex(-$dihedral-angle);
+    }
+
+    .b2 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(-50px)
+            translateX(40.5%)
+            translateY(-31%)
+            rotate(-72deg)
+            rotatex(-$dihedral-angle);
+    }
+
+    .b3 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(-50px)
+            rotatex(-$dihedral-angle);
+    }
+
+    .b4 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(-50px)
+            translateX(-40.5%)
+            translateY(-31%)
+            rotate(72deg)
+            rotatex(-$dihedral-angle);
+    }
+
+    .b5 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(-50px)
+            translateX(-25%)
+            translateY(-81%)
+            rotate(144deg)
+            rotatex(-$dihedral-angle);
+    }
+
+    .top {
+        transform:
+            translateZ(calc($inradius*2 - 50px))
+            translateY(calc($centerY*2 - $height)) // differentiation from center
+            rotate(180deg);
+    }
+
+    .b6 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(calc($inradius*2 - 50px))
+            translateY(calc($centerY*2 - $height - 100%))
+            rotate(180deg)
+            rotatex($dihedral-angle);
+    }
+
+    .b7 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(calc($inradius*2 - 50px))
+            translateX(40.5%)
+            translateY(calc($centerY*2 - $height - 100% + 31%))
+            rotate(72deg)
+            rotatex(calc(180deg - $dihedral-angle));
+    }
+
+    .b8 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(calc($inradius*2 - 50px))
+            translateX(25%)
+            translateY(calc($centerY*2 - $height - 100% + 80.901699438%))
+            rotate(144deg)
+            rotatex(calc(180deg - $dihedral-angle));
+    }
+
+    .b9 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(calc($inradius*2 - 50px))
+            translateX(-25%)
+            translateY(calc($centerY*2 - $height - 100% + 80.901699438%))
+            rotate(-144deg)
+            rotatex(calc(180deg - $dihedral-angle));
+    }
+
+    .b10 {
+        transform-origin:50% 100%;
+        transform:
+            translateZ(calc($inradius*2 - 50px))
+            translateX(-40.5%)
+            translateY(calc($centerY*2 - $height - 100% + 31%))
+            rotate(-72deg)
+            rotatex(calc(180deg - $dihedral-angle));
+    }
+}

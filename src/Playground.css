@@ -1,0 +1,107 @@
+.body {
+    background-color: #333;
+    width: 100vw;
+    height: 1000vh;
+}
+
+.parent {
+    background-color: hsla(200, 100%, 20%);
+    height: 400px;
+    width: 400px;
+}
+
+.child {
+    background-color: red;
+    height: 50%;
+    width: 50%;
+    animation: left-to-right 1s ease-in forwards infinite alternate;
+}
+
+.parent:hover .child {
+    animation-play-state: paused;
+}
+
+@keyframes left-to-right {
+    0% {
+        background-color: red;
+        transform: translateX(0);
+    }
+
+    33% {
+        transform: translateY(100%);
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    66% {
+        transform: translateX(100%) translateY(100%);
+    }
+
+    100% {
+        background-color: green;
+        transform: translateX(100%);
+    }
+}
+
+.box {
+    position: absolute;
+    height: 191px;
+    width: 191px;
+}
+
+@keyframes moving-box {
+    0% {
+        background: white;
+        transform: translateX(0);
+    }
+
+    25% {
+        background: red;
+        transform: translateX(110%);
+        border-radius: 50% 0 0 0;
+    }
+
+    50% {
+        background: green;
+        transform: translateX(110%) translateY(110%);
+        border-radius: 50% 50% 0 0;
+    }
+
+    75% {
+        background: blue;
+        transform: translateX(0) translateY(110%);
+        border-radius: 50% 50% 50% 0;
+    }
+
+    100% {
+        background: white;
+        transform: translateY(0);
+    }
+}
+
+@keyframes changing-box {
+    0% {
+        background: white;
+    }
+
+    25% {
+        background: red;
+        border-radius: 50% 0 0 0;
+    }
+
+    50% {
+        background: green;
+        border-radius: 50% 50% 0 0;
+    }
+
+    75% {
+        background: blue;
+        border-radius: 50% 50% 50% 0;
+    }
+
+    100% {
+        background: white;
+    }
+}
