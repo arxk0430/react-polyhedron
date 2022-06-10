@@ -15,12 +15,12 @@
 
 .dodecahedron {
     // property of polygon https://en.wikipedia.org/wiki/Pentagon
-    $width: 100px;
-    $height: 95.1174289246px;
-    $side-length: 61.804697157px;
-    $centerY: 52.5772558715px;
+    $width: 150px;
+    $height: $width * 0.951174289246;
+    $side-length: $width * 0.61804697157;
+    $centerY: $width * 0.525772558715;
     // property of dodecahedron
-    $inradius: 68.821px;
+    $inradius: $width * 0.68821 - 1px;
     $dihedral-angle: 116.56505deg;
 
     $border-width: 6px;

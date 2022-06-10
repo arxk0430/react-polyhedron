@@ -1,7 +1,7 @@
 import "./Playground.css"
-import Tetrahedron from './Tetrahedron';
+import {Tetrahedron, TriangularBipyramid} from './Tetrahedron';
 import Dodecahedron from './Dodecahedron';
-import Icosahedron from './Icosahedron';
+import {SharpIcosahedron, Icosahedron} from './Icosahedron';
 import Cube from './Cube';
 
 const Boxes = () => {
@@ -18,6 +18,8 @@ const Boxes = () => {
 const Playground = () => {
     return(
         <div className="body">
+            <SharpIcosahedron />
+            <TriangularBipyramid />
             <Icosahedron />
             <Dodecahedron />
             <Tetrahedron />
@@ -26,7 +28,6 @@ const Playground = () => {
                 <div className="child" />
             </div>
             <Boxes />
-            <div className="box" style={{animation: "changing-box 4s ease-in-out forwards infinite"}}/>
         </div>
     )
 }

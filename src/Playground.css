@@ -1,7 +1,8 @@
 .body {
     background-color: #333;
     width: 100vw;
-    height: 1000vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .parent {
@@ -78,30 +79,5 @@
     100% {
         background: white;
         transform: translateY(0);
-    }
-}
-
-@keyframes changing-box {
-    0% {
-        background: white;
-    }
-
-    25% {
-        background: red;
-        border-radius: 50% 0 0 0;
-    }
-
-    50% {
-        background: green;
-        border-radius: 50% 50% 0 0;
-    }
-
-    75% {
-        background: blue;
-        border-radius: 50% 50% 50% 0;
-    }
-
-    100% {
-        background: white;
     }
 }
