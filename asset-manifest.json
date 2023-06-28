@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-polyhedron/static/css/main.178f4dc4.css",
+    "main.js": "/react-polyhedron/static/js/main.605c063c.js",
+    "static/js/787.16150843.chunk.js": "/react-polyhedron/static/js/787.16150843.chunk.js",
+    "index.html": "/react-polyhedron/index.html",
+    "main.178f4dc4.css.map": "/react-polyhedron/static/css/main.178f4dc4.css.map",
+    "main.605c063c.js.map": "/react-polyhedron/static/js/main.605c063c.js.map",
+    "787.16150843.chunk.js.map": "/react-polyhedron/static/js/787.16150843.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.178f4dc4.css",
+    "static/js/main.605c063c.js"
+  ]
+}
